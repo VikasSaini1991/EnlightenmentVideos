@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/llayout"
+        >
+        <fragment
+            android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+            android:id="@+id/youtubeplayerfragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></fragment>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/CrinoidTechnologies"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="5dp"
+            android:gravity="left"
+            android:id="@+id/tv_yvtitle"
+            android:textColor="@color/Black"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+            android:id="@+id/scrollView">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/yvDescription"
+                android:text="@string/description"
+                android:textSize="20sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                />
+
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

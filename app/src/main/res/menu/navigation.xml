@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_video"
+        android:icon="@drawable/ic_video_library_black_24dp"
+        android:title="@string/title_videos" />
+
+    <item
+        android:id="@+id/navigation_feedback"
+        android:icon="@drawable/ic_feedback_black_24dp"
+        android:title="@string/title_feedback" />
+
+
+
+</menu>

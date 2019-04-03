@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "86556277033",
+    "firebase_url": "https://enlightenmentvideos-16782.firebaseio.com",
+    "project_id": "enlightenmentvideos-16782",
+    "storage_bucket": "enlightenmentvideos-16782.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86556277033:android:0edf0f1e64248725",
+        "android_client_info": {
+          "package_name": "com.crinoidtechnologies.enlightenmentvideos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86556277033-rifgll3bmg8v5rich784rv06t5n6vhj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.crinoidtechnologies.enlightenmentvideos",
+            "certificate_hash": "a616d48e8b39ccd11d6ef321c28facda23177da3"
+          }
+        },
+        {
+          "client_id": "86556277033-13q50a2ei6ap58710ib7ie2carhhurkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8VmhnrxNp4WP6VGuMe69FG3EoyB_KRcc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86556277033-13q50a2ei6ap58710ib7ie2carhhurkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
