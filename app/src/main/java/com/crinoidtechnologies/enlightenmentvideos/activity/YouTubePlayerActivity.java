@@ -21,55 +21,53 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main3Activity extends AppCompatActivity {
-String TAG="Main3Activity";
-TextView textView1, textView2;
-    ArrayList<String> stringList=new ArrayList<>(  );
-YouTubePlayerSupportFragment youTubePlayerSupportFragment;
-YouTubePlayer activePlayer;
+public class YouTubePlayerActivity extends AppCompatActivity {
+    private String TAG = "YouTubePlayerActivity";
+    private TextView textView1, textView2;
+    private ArrayList<String> stringList = new ArrayList<>();
+    private YouTubePlayerSupportFragment youTubePlayerSupportFragment;
+    private YouTubePlayer activePlayer;
     private static final String API_KEY = "AIzaSyBEsu57Fs9yKutL3je68Xiec4jSt9Uo6_I";
-    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-    DatabaseReference rootdabase=firebaseDatabase.getReference(  "Videos");
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference rootdabase = firebaseDatabase.getReference("Videos");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.listlayoutyoutubevideo );
-        textView1=findViewById( R.id.tv_yvtitle );
-        textView2=findViewById( R.id.yvDescription );
-        rootdabase.addListenerForSingleValueEvent( new ValueEventListener() {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.listlayoutyoutubevideo);
+        textView1 = findViewById(R.id.tv_yvtitle);
+        textView2 = findViewById(R.id.yvDescription);
+        rootdabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d( TAG, "onDataChange: "+dataSnapshot.getValue() );
+                Log.d(TAG, "onDataChange: " + dataSnapshot.getValue());
 
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    Videos videos= userSnapshot.getValue(Videos.class);
-                    textView1.setText( getIntent().getExtras().getString( "title" ) );
-                    textView2.setText( getIntent().getExtras().getString( "description" ) );
+                    Videos videos = userSnapshot.getValue(Videos.class);
+                    textView1.setText(getIntent().getExtras().getString("title"));
+                    textView2.setText(getIntent().getExtras().getString("description"));
 
 //                    final String temp= (String) userSnapshot.getValue();
 //                    Log.d( TAG, "onDataChange: "+temp );
-                    stringList.add( videos.video_id );
+                    stringList.add(videos.video_id);
 //                    stringList.add( videos.getTitle() );
 //                    stringList.add( videos.getDescription() );
                 }
-                for(int i=0; i<stringList.size(); i++){
-                    Log.d( TAG, "onDataChange:"+stringList.get( i ) );
+                for (int i = 0; i < stringList.size(); i++) {
+                    Log.d(TAG, "onDataChange:" + stringList.get(i));
                 }
 
 
-
-
-                youTubePlayerSupportFragment=YouTubePlayerSupportFragment.newInstance();
-                youTubePlayerSupportFragment= (YouTubePlayerSupportFragment) getSupportFragmentManager().findFragmentById( R.id.youtubeplayerfragment );
-                youTubePlayerSupportFragment.initialize( API_KEY, new YouTubePlayer.OnInitializedListener() {
+                youTubePlayerSupportFragment = YouTubePlayerSupportFragment.newInstance();
+                youTubePlayerSupportFragment = (YouTubePlayerSupportFragment) getSupportFragmentManager().findFragmentById(R.id.youtubeplayerfragment);
+                youTubePlayerSupportFragment.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
                     @Override
                     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
                         activePlayer = youTubePlayer;
                         activePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                        if(!b){
-                            activePlayer.loadVideo( getIntent().getExtras().getString( "videoid" ) );
+                        if (!b) {
+                            activePlayer.loadVideo(getIntent().getExtras().getString("videoid"));
 
 //                            youTubePlayer.cueVideo( getIntent().getExtras().getString( "videoid" ));
                         }
@@ -79,14 +77,14 @@ YouTubePlayer activePlayer;
                     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
 
                     }
-                } );
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        } );
+        });
 
     }
 }

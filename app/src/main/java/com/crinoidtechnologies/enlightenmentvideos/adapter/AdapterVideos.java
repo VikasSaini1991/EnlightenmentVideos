@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.crinoidtechnologies.enlightenmentvideos.R;
-import com.crinoidtechnologies.enlightenmentvideos.activity.Main3Activity;
+import com.crinoidtechnologies.enlightenmentvideos.activity.YouTubePlayerActivity;
 import com.crinoidtechnologies.enlightenmentvideos.fragment.VideosFragment;
 import com.crinoidtechnologies.enlightenmentvideos.models.Videos;
 import com.squareup.picasso.Picasso;
@@ -63,7 +63,7 @@ public class AdapterVideos extends RecyclerView.Adapter<AdapterVideos.VideoViewH
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(fragment.getActivity(), Main3Activity.class );
+                Intent intent=new Intent(fragment.getActivity(), YouTubePlayerActivity.class );
                 intent.putExtra( "title",videos.getTitle() );
                 intent.putExtra( "description", videos.getDescription() );
                 intent.putExtra( "videoid",videos.getVideoId() );

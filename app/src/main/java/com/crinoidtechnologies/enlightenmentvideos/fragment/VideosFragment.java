@@ -156,7 +156,6 @@ public class VideosFragment extends Fragment {
                 }
                 adapter.notifyDataSetChanged();
 
-
             }
 
             @Override

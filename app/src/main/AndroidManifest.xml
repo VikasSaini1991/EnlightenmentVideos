@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Main3Activity"
+        <activity android:name=".activity.YouTubePlayerActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
